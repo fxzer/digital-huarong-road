@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full text-sm">
+  <div class="wh-screen flex-center">
     <slot />
   </div>
 </template>

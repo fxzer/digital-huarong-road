@@ -9,6 +9,7 @@
     "start": "nuxt dev",
     "build": "nuxt build",
     "dev": "nuxt dev",
+    "test": "vitest",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
@@ -47,7 +48,8 @@
     "simple-git-hooks": "^2.9.0",
     "standard-version": "^9.5.0",
     "unplugin-auto-import": "^0.15.3",
-    "unplugin-vue-components": "^0.24.1"
+    "unplugin-vue-components": "^0.24.1",
+    "vitest": "^0.34.6"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint:fix",

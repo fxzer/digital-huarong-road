@@ -32,12 +32,12 @@ export default defineNuxtConfig({
         },
         {
           name: 'keywords',
-          content: 'websilte global keywords',
+          content: 'digital-huarong-road',
         },
         {
           name: 'description',
           content:
-            'websilte global description',
+            'digital-huarong-road',
         },
         {
           charset: 'utf-8',
@@ -45,11 +45,6 @@ export default defineNuxtConfig({
         { name: 'theme-color', content: '#FCF2E2' }, // PWA移动浏览器顶部主题颜色
       ],
       link: [
-        {
-          hid: 'icon',
-          rel: 'icon',
-          href: '/logo.ico',
-        },
         {
           hid: 'icon',
           rel: 'icon',

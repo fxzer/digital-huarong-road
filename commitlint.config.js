@@ -2,6 +2,7 @@
 const fs = require('node:fs')
 const path = require('node:path')
 
+/** 获取项目目录作为提交的可供选择范围 */
 const scopes = fs
   .readdirSync(path.resolve(__dirname), { withFileTypes: true })
   .filter(dirent => dirent.isDirectory())
@@ -55,91 +56,21 @@ module.exports = {
       confirmCommit: 'Are you sure you want to proceed with the commit above?',
     },
     types: [
-      {
-        value: 'feat',
-        name: 'feat:     🚀  A new feature',
-        emoji: '🚀',
-      },
-      {
-        value: 'fix',
-        name: 'fix:      🧩  A bug fix',
-        emoji: '🧩',
-      },
-      {
-        value: 'docs',
-        name: 'docs:     📚  Documentation only changes',
-        emoji: '📚',
-      },
-      {
-        value: 'style',
-        name: 'style:    🎨  Changes that do not affect the meaning of the code',
-        emoji: '🎨',
-      },
-      {
-        value: 'refactor',
-        name: 'refactor: ♻️   A code change that neither fixes a bug nor adds a feature',
-        emoji: '♻️',
-      },
-      {
-        value: 'perf',
-        name: 'perf:     ⚡️  A code change that improves performance',
-        emoji: '⚡️',
-      },
-      {
-        value: 'test',
-        name: 'test:     ✅  Adding missing tests or correcting existing tests',
-        emoji: '✅',
-      },
-      {
-        value: 'build',
-        name: 'build:    📦️   Changes that affect the build system or external dependencies',
-        emoji: '📦️',
-      },
-      {
-        value: 'ci',
-        name: 'ci:       🎡  Changes to our CI configuration files and scripts',
-        emoji: '🎡',
-      },
-      {
-        value: 'chore',
-        name: 'chore:    🔨  Other changes that don\'t modify src or test files',
-        emoji: '🔨',
-      },
-      {
-        value: 'revert',
-        name: 'revert:   ⏪️  Reverts a previous commit',
-        emoji: '⏪️',
-      },
-      {
-        value: 'wip',
-        name: 'wip:      🕔  work in process',
-        emoji: '🕔',
-      },
-      {
-        value: 'workflow',
-        name: 'workflow: 📋  workflow improvements',
-        emoji: '📋',
-      },
-      {
-        value: 'type',
-        name: 'type:     🔰  type definition file changes',
-        emoji: '🔰',
-      },
       // 中文版
-      // { value: "feat", name: "特性:   🚀  新增功能", emoji: "🚀" },
-      // { value: "fix", name: "修复:   🧩  修复缺陷", emoji: "🧩" },
-      // { value: "docs", name: "文档:   📚  文档变更", emoji: "📚" },
-      // { value: "style", name: "格式:   🎨  代码格式（不影响功能，例如空格、分号等格式修正）", emoji: "🎨" },
-      // { value: "refactor", name: "重构:   ♻️  代码重构（不包括 bug 修复、功能新增）", emoji: "♻️" },
-      // { value: "perf", name: "性能:    ⚡️  性能优化", emoji: "⚡️" },
-      // { value: "test", name: "测试:   ✅  添加疏漏测试或已有测试改动", emoji: "✅" },
-      // { value: "build", name: "构建:   📦️  构建流程、外部依赖变更（如升级 npm 包、修改 webpack 配置等）", emoji: "📦️" },
-      // { value: "ci", name: "集成:   🎡  修改 CI 配置、脚本", emoji: "🎡" },
-      // { value: "revert", name: "回退:   ⏪️  回滚 commit", emoji: "⏪️" },
-      // { value: "chore", name: "其他:   🔨  对构建过程或辅助工具和库的更改（不影响源文件、测试用例）", emoji: "🔨" },
-      // { value: "wip", name: "开发:   🕔  正在开发中", emoji: "🕔" },
-      // { value: "workflow", name: "工作流:   📋  工作流程改进", emoji: "📋" },
-      // { value: "types", name: "类型:   🔰  类型定义文件修改", emoji: "🔰" }
+      { value: 'feat', name: '特性:   🚀  新增功能', emoji: '🚀' },
+      { value: 'fix', name: '修复:   🧩  修复缺陷', emoji: '🧩' },
+      { value: 'docs', name: '文档:   📚  文档变更', emoji: '📚' },
+      { value: 'style', name: '格式:   🎨  代码格式（不影响功能，例如空格、分号等格式修正）', emoji: '🎨' },
+      { value: 'refactor', name: '重构:   ♻️  代码重构（不包括 bug 修复、功能新增）', emoji: '♻️' },
+      { value: 'perf', name: '性能:    ⚡️  性能优化', emoji: '⚡️' },
+      { value: 'test', name: '测试:   ✅  添加疏漏测试或已有测试改动', emoji: '✅' },
+      { value: 'build', name: '构建:   📦️  构建流程、外部依赖变更（如升级 npm 包、修改 webpack 配置等）', emoji: '📦️' },
+      { value: 'ci', name: '集成:   🎡  修改 CI 配置、脚本', emoji: '🎡' },
+      { value: 'revert', name: '回退:   ⏪️  回滚 commit', emoji: '⏪️' },
+      { value: 'chore', name: '其他:   🔨  对构建过程或辅助工具和库的更改（不影响源文件、测试用例）', emoji: '🔨' },
+      { value: 'wip', name: '开发:   🕔  正在开发中', emoji: '🕔' },
+      { value: 'workflow', name: '工作流:   📋  工作流程改进', emoji: '📋' },
+      { value: 'types', name: '类型:   🔰  类型定义文件修改', emoji: '🔰' },
     ],
     useEmoji: true,
     scopes: [...scopes],

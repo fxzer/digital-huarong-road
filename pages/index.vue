@@ -69,7 +69,7 @@ function handleClick(i: number) {
     <TransitionGroup v-for="n, i in nums" :key="n" tag="div" name="fade">
       <div
         v-if="n !== 0" :style="idxStyle(i)"
-        class="absolute wh-25 flex-center cursor-pointer select-none rounded-md bg-green text-4xl font-semibold text-white"
+        class="absolute wh-25 flex-center cursor-pointer select-none rounded-md bg-green text-4xl text-white font-semibold"
         @click="handleClick(i)"
       >
         {{ n }}

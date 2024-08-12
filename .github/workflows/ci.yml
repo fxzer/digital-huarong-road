@@ -1,0 +1,47 @@
+name: Build & Deploy & Sync Gitee & Send Email
+on:
+  push:
+    branches:
+      - main
+    paths-ignore: # 下列文件的变更不触发部署
+      - README.md
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set USERNAME and REPO_NAME
+        run: |
+          echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV
+          echo "REPO_NAME=${{ github.repository }}" >> $GITHUB_ENV
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v4
+        with:
+          version: latest
+          run_install: true
+
+      - name: Install ni
+        run: pnpm i -g @antfu/ni
+
+      - name: Install deps
+        run: nci
+
+      - name: Generate
+        run: |
+          nr generate
+
+      - name: Deploy to github-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.DEPLOY_TOKEN }}
+          publish_dir: ./.output/public
+          user_name: github-actions[bot]
+          user_email: github-actions[bot]@users.noreply.github.com

@@ -2,26 +2,32 @@ export default defineNuxtConfig({
   experimental: {
     payloadExtraction: false,
   },
+
   devServer: {
     port: 8888,
   },
+
   modules: [
     '@unocss/nuxt',
     '@vueuse/nuxt',
   ],
+
   postcss: {
     plugins: {
       autoprefixer: {}, // 自动添加前缀
       cssnano: {},
     },
   },
+
   css: ['assets/style/main.scss'],
+
   nitro: {
     prerender: {
       crawlLinks: true,
       routes: ['/'],
     },
   },
+
   app: {
     head: {
       title: 'digital-huarong-road',
@@ -56,4 +62,6 @@ export default defineNuxtConfig({
       script: [],
     },
   },
+
+  compatibilityDate: '2024-08-12',
 })

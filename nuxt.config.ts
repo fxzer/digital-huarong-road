@@ -1,7 +1,4 @@
 export default defineNuxtConfig({
-  experimental: {
-    payloadExtraction: false,
-  },
 
   devServer: {
     port: 8888,
@@ -29,6 +26,7 @@ export default defineNuxtConfig({
   },
 
   app: {
+    baseURL: '/digital-huarong-road/',
     head: {
       title: 'digital-huarong-road',
       meta: [

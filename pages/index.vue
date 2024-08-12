@@ -78,7 +78,7 @@ function handleClick(i: number) {
   </div>
 </template>
 
-<style scoped lang='scss'>
+<style scoped >
 .fade-move,
 .fade-enter-active,
 .fade-leave-active {

@@ -42,7 +42,6 @@
     "astro",
     "css",
     "less",
-    "scss",
     "pcss",
     "postcss"
   ]

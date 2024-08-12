@@ -1,0 +1,1 @@
+import{_ as t,v as s,R as c,t as r}from"./CARHDovA.js";const n={},o={class:"wh-screen flex-center"};function a(e,_){return r(),s("div",o,[c(e.$slots,"default")])}const f=t(n,[["render",a]]);export{f as default};
